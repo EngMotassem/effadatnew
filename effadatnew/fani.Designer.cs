@@ -75,19 +75,10 @@
             this.RoomID = new MetroFramework.Controls.MetroTextBox();
             this.metroButton2 = new MetroFramework.Controls.MetroButton();
             this.devgrid = new System.Windows.Forms.DataGridView();
-            this.punishTextDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.punishDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.employeeNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.roomNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.subjectNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lagnanoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.punishNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.shows = new System.Windows.Forms.DataGridViewImageColumn();
-            this.del = new System.Windows.Forms.DataGridViewImageColumn();
-            this.aLlreportsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataTable1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnprintqarar = new MetroFramework.Controls.MetroButton();
             this.txtnumherman = new MetroFramework.Controls.MetroTextBox();
+            this.aLlreportsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.employeeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
@@ -101,20 +92,29 @@
             this.punishBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.punishTableAdapter = new effadatnew.effadatDataSetTableAdapters.PunishTableAdapter();
             this.aLlreportsTableAdapter = new effadatnew.effadatDataSetTableAdapters.ALlreportsTableAdapter();
-            this.dataTable1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataTable1TableAdapter = new effadatnew.effadatDataSetTableAdapters.DataTable1TableAdapter();
+            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.punishTextDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.punishDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.employeeNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.roomNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.subjectNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lagnanoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.punishNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.shows = new System.Windows.Forms.DataGridViewImageColumn();
+            this.del = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.punishTypesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.effadatDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.effadatDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.roomsBindingSource)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.devgrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataTable1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aLlreportsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.subjectsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.punishBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataTable1BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dateTimePicker1
@@ -593,9 +593,9 @@
             this.devgrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.devgrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.devgrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.iDDataGridViewTextBoxColumn,
             this.punishTextDataGridViewTextBoxColumn,
             this.punishDateDataGridViewTextBoxColumn,
-            this.iDDataGridViewTextBoxColumn,
             this.employeeNameDataGridViewTextBoxColumn,
             this.roomNameDataGridViewTextBoxColumn,
             this.subjectNameDataGridViewTextBoxColumn,
@@ -624,85 +624,10 @@
             this.devgrid.TabIndex = 4;
             this.devgrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.devgrid_CellClick);
             // 
-            // punishTextDataGridViewTextBoxColumn
+            // dataTable1BindingSource
             // 
-            this.punishTextDataGridViewTextBoxColumn.DataPropertyName = "punishText";
-            this.punishTextDataGridViewTextBoxColumn.HeaderText = "punishText";
-            this.punishTextDataGridViewTextBoxColumn.Name = "punishTextDataGridViewTextBoxColumn";
-            this.punishTextDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // punishDateDataGridViewTextBoxColumn
-            // 
-            this.punishDateDataGridViewTextBoxColumn.DataPropertyName = "punishDate";
-            this.punishDateDataGridViewTextBoxColumn.HeaderText = "punishDate";
-            this.punishDateDataGridViewTextBoxColumn.Name = "punishDateDataGridViewTextBoxColumn";
-            this.punishDateDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // iDDataGridViewTextBoxColumn
-            // 
-            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
-            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iDDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // employeeNameDataGridViewTextBoxColumn
-            // 
-            this.employeeNameDataGridViewTextBoxColumn.DataPropertyName = "employeeName";
-            this.employeeNameDataGridViewTextBoxColumn.HeaderText = "الاسم";
-            this.employeeNameDataGridViewTextBoxColumn.Name = "employeeNameDataGridViewTextBoxColumn";
-            // 
-            // roomNameDataGridViewTextBoxColumn
-            // 
-            this.roomNameDataGridViewTextBoxColumn.DataPropertyName = "roomName";
-            this.roomNameDataGridViewTextBoxColumn.HeaderText = "الغرفة";
-            this.roomNameDataGridViewTextBoxColumn.Name = "roomNameDataGridViewTextBoxColumn";
-            // 
-            // subjectNameDataGridViewTextBoxColumn
-            // 
-            this.subjectNameDataGridViewTextBoxColumn.DataPropertyName = "subjectName";
-            this.subjectNameDataGridViewTextBoxColumn.HeaderText = "subjectName";
-            this.subjectNameDataGridViewTextBoxColumn.Name = "subjectNameDataGridViewTextBoxColumn";
-            this.subjectNameDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // lagnanoDataGridViewTextBoxColumn
-            // 
-            this.lagnanoDataGridViewTextBoxColumn.DataPropertyName = "lagna_no";
-            this.lagnanoDataGridViewTextBoxColumn.HeaderText = "lagna_no";
-            this.lagnanoDataGridViewTextBoxColumn.Name = "lagnanoDataGridViewTextBoxColumn";
-            this.lagnanoDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // punishNameDataGridViewTextBoxColumn
-            // 
-            this.punishNameDataGridViewTextBoxColumn.DataPropertyName = "PunishName";
-            this.punishNameDataGridViewTextBoxColumn.HeaderText = "نوع الافادة";
-            this.punishNameDataGridViewTextBoxColumn.Name = "punishNameDataGridViewTextBoxColumn";
-            // 
-            // shows
-            // 
-            this.shows.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.shows.FillWeight = 9.723158F;
-            this.shows.HeaderText = "عرض";
-            this.shows.Image = ((System.Drawing.Image)(resources.GetObject("shows.Image")));
-            this.shows.Name = "shows";
-            this.shows.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.shows.Width = 53;
-            // 
-            // del
-            // 
-            this.del.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.del.FillWeight = 9.723158F;
-            this.del.HeaderText = "حذف";
-            this.del.Image = ((System.Drawing.Image)(resources.GetObject("del.Image")));
-            this.del.Name = "del";
-            this.del.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.del.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.del.Width = 74;
-            // 
-            // aLlreportsBindingSource
-            // 
-            this.aLlreportsBindingSource.DataMember = "ALlreports";
-            this.aLlreportsBindingSource.DataSource = this.effadatDataSet;
+            this.dataTable1BindingSource.DataMember = "DataTable1";
+            this.dataTable1BindingSource.DataSource = this.effadatDataSet;
             // 
             // btnprintqarar
             // 
@@ -725,6 +650,11 @@
             this.txtnumherman.TabIndex = 15;
             this.txtnumherman.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtnumherman.Visible = false;
+            // 
+            // aLlreportsBindingSource
+            // 
+            this.aLlreportsBindingSource.DataMember = "ALlreports";
+            this.aLlreportsBindingSource.DataSource = this.effadatDataSet;
             // 
             // employeeBindingSource
             // 
@@ -830,14 +760,84 @@
             // 
             this.aLlreportsTableAdapter.ClearBeforeFill = true;
             // 
-            // dataTable1BindingSource
-            // 
-            this.dataTable1BindingSource.DataMember = "DataTable1";
-            this.dataTable1BindingSource.DataSource = this.effadatDataSet;
-            // 
             // dataTable1TableAdapter
             // 
             this.dataTable1TableAdapter.ClearBeforeFill = true;
+            // 
+            // iDDataGridViewTextBoxColumn
+            // 
+            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iDDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // punishTextDataGridViewTextBoxColumn
+            // 
+            this.punishTextDataGridViewTextBoxColumn.DataPropertyName = "punishText";
+            this.punishTextDataGridViewTextBoxColumn.HeaderText = "punishText";
+            this.punishTextDataGridViewTextBoxColumn.Name = "punishTextDataGridViewTextBoxColumn";
+            this.punishTextDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // punishDateDataGridViewTextBoxColumn
+            // 
+            this.punishDateDataGridViewTextBoxColumn.DataPropertyName = "punishDate";
+            this.punishDateDataGridViewTextBoxColumn.HeaderText = "punishDate";
+            this.punishDateDataGridViewTextBoxColumn.Name = "punishDateDataGridViewTextBoxColumn";
+            this.punishDateDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // employeeNameDataGridViewTextBoxColumn
+            // 
+            this.employeeNameDataGridViewTextBoxColumn.DataPropertyName = "employeeName";
+            this.employeeNameDataGridViewTextBoxColumn.HeaderText = "الاسم";
+            this.employeeNameDataGridViewTextBoxColumn.Name = "employeeNameDataGridViewTextBoxColumn";
+            // 
+            // roomNameDataGridViewTextBoxColumn
+            // 
+            this.roomNameDataGridViewTextBoxColumn.DataPropertyName = "roomName";
+            this.roomNameDataGridViewTextBoxColumn.HeaderText = "الغرفة";
+            this.roomNameDataGridViewTextBoxColumn.Name = "roomNameDataGridViewTextBoxColumn";
+            // 
+            // subjectNameDataGridViewTextBoxColumn
+            // 
+            this.subjectNameDataGridViewTextBoxColumn.DataPropertyName = "subjectName";
+            this.subjectNameDataGridViewTextBoxColumn.HeaderText = "subjectName";
+            this.subjectNameDataGridViewTextBoxColumn.Name = "subjectNameDataGridViewTextBoxColumn";
+            this.subjectNameDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // lagnanoDataGridViewTextBoxColumn
+            // 
+            this.lagnanoDataGridViewTextBoxColumn.DataPropertyName = "lagna_no";
+            this.lagnanoDataGridViewTextBoxColumn.HeaderText = "lagna_no";
+            this.lagnanoDataGridViewTextBoxColumn.Name = "lagnanoDataGridViewTextBoxColumn";
+            this.lagnanoDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // punishNameDataGridViewTextBoxColumn
+            // 
+            this.punishNameDataGridViewTextBoxColumn.DataPropertyName = "PunishName";
+            this.punishNameDataGridViewTextBoxColumn.HeaderText = "نوع الافادة";
+            this.punishNameDataGridViewTextBoxColumn.Name = "punishNameDataGridViewTextBoxColumn";
+            // 
+            // shows
+            // 
+            this.shows.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.shows.FillWeight = 9.723158F;
+            this.shows.HeaderText = "عرض";
+            this.shows.Image = ((System.Drawing.Image)(resources.GetObject("shows.Image")));
+            this.shows.Name = "shows";
+            this.shows.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.shows.Width = 53;
+            // 
+            // del
+            // 
+            this.del.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.del.FillWeight = 9.723158F;
+            this.del.HeaderText = "حذف";
+            this.del.Image = ((System.Drawing.Image)(resources.GetObject("del.Image")));
+            this.del.Name = "del";
+            this.del.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.del.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.del.Width = 74;
             // 
             // fani
             // 
@@ -861,12 +861,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.roomsBindingSource)).EndInit();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.devgrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataTable1BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.aLlreportsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.subjectsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.punishBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataTable1BindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -931,9 +931,11 @@
         private effadatDataSetTableAdapters.PunishTableAdapter punishTableAdapter;
         private System.Windows.Forms.BindingSource aLlreportsBindingSource;
         private effadatDataSetTableAdapters.ALlreportsTableAdapter aLlreportsTableAdapter;
+        private System.Windows.Forms.BindingSource dataTable1BindingSource;
+        private effadatDataSetTableAdapters.DataTable1TableAdapter dataTable1TableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn punishTextDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn punishDateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn employeeNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn roomNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn subjectNameDataGridViewTextBoxColumn;
@@ -941,7 +943,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn punishNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewImageColumn shows;
         private System.Windows.Forms.DataGridViewImageColumn del;
-        private System.Windows.Forms.BindingSource dataTable1BindingSource;
-        private effadatDataSetTableAdapters.DataTable1TableAdapter dataTable1TableAdapter;
     }
 }

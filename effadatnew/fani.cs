@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using effadatnew.Properties;
 using MetroFramework;
+using MetroFramework.Forms;
 //using MetroFramework.Forms;
 
 namespace effadatnew
@@ -40,6 +41,7 @@ namespace effadatnew
             //  this.subjectsTableAdapter.Fill(this.effadatDataSet.Subjects);
             // TODO: This line of code loads data into the 'effadatDataSet.rooms' table. You can move, or remove it, as needed.
             this.roomsTableAdapter.Fill(this.effadatDataSet.rooms);
+         //   this.roomsTableAdapter.
             RomeComboBox.SelectedIndex = -1;
             RomeComboBox.Text = "من فضلك اختر الغرفة";
 
@@ -296,6 +298,96 @@ namespace effadatnew
 
         private void devgrid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            try
+            {
+                if (e.RowIndex != -1)
+                {
+                    // عرض قرار سابق من الجريد
+                    if (e.ColumnIndex == 8)
+                    {
+                       // MessageBox.Show(devgrid.Rows[e.RowIndex].Cells[0].Value.ToString());
+
+                        punishTableAdapter.FillBy(effadatDataSet.Punish, Convert.ToInt32(devgrid.Rows[e.RowIndex].Cells[0].Value));
+
+                        effadatDataSet.PunishDataTable list1 = effadatDataSet.Punish;
+
+                        if(list1.Count != 0)
+                        {
+
+                          //  RomeComboBox.SelectedIndex = RomeComboBox.Items.IndexOf(list1[0].roomID.ToString());
+
+                           txtCivil.Text = list1[0].roomID.ToString();
+
+                            roomsTableAdapter.FillBy(effadatDataSet.rooms,list1[0].roomID);
+                            //RomeComboBox.DataSource = 
+
+                            RomeComboBox.DisplayMember = "roomName";
+                            RomeComboBox.ValueMember = "ID";
+
+
+                        }
+                        // //adabdec.FillBy(dataDataSet1.decTbl, Convert.ToInt32(devgrid.Rows[e.RowIndex].Cells[0].Value));
+
+                        //// adabePunish.FillBy(dataDataSet1.employeePunish, Convert.ToInt32(devgrid.Rows[e.RowIndex].Cells[0].Value));
+
+
+                        // dataDataSet.employeePunishDataTable list1 = dataDataSet1.employeePunish;
+                        // if (list1.Count != 0)
+                        // {
+
+                        //     dateTimePicker1.Text = list1[0].punishDate;
+                        //     txtCivil.Text = list1[0].civilId.ToString();
+                        //     RomeComboBox.Text = list1[0].roomName;
+
+                        //     employeeCombo1.Text = list1[0].empName;
+
+                        //     lagnaCombo.Text = list1[0].lagnaNumber;
+                        //     cmbcourse.Text = list1[0].examName;
+
+                        //     txtreport.Text = list1[0].notes;
+
+                        //     metroComboBox2.Text = list1[0].punishtype;
+
+
+                        // }
+                    }
+
+                    // حذف قرار
+                    else if (e.ColumnIndex == 8)
+                    { }
+                }
+            }
+            //    int test = 0;
+            //    DialogResult res = MetroMessageBox.Show(this, "هل أنت متأكد من حذف هذا القرار \n مع العلم  سيتم حذفه نهائياَ؟", "معلومات", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, 150);
+            //    if (res == DialogResult.Yes)
+            //    {
+
+            //        //adabePunish.FillAll(dataDataSet1.employeePunish, Convert.ToInt32(devgrid.Rows[e.RowIndex].Cells[0].Value));
+
+
+            //        adabePunish.FillBy(dataDataSet1.employeePunish, Convert.ToInt32(devgrid.Rows[e.RowIndex].Cells[0].Value));
+            //        dataDataSet.employeePunishDataTable list = dataDataSet1.employeePunish;
+            //        if (list.Count != 0)
+            //        {
+
+            //            test = adabePunish.DeleteQuery(list[0].decID);
+
+            //            if (test == 1)
+            //            {
+            //                MetroMessageBox.Show(this, "تم حذف البيانات بنجاح", "معلومات ", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, 100);
+
+            //                ShowPunishments();
+            //            }
+
+            //        }
+            //    }
+            //}
+
+            //  }
+            //}
+            catch (Exception v)
+            {
+            }
 
         }
 
