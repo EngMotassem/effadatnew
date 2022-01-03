@@ -10,12 +10,12 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using effadatnew.Properties;
 using MetroFramework;
-using MetroFramework.Forms;
+
 //using MetroFramework.Forms;
 
 namespace effadatnew
 {
-    public partial class fani :  MetroFramework.Forms.MetroForm
+    public partial class fani : MetroFramework.Forms.MetroForm
     {
         effadatDataSet.SubjectsDataTable list = new effadatDataSet.SubjectsDataTable();
         int roomtype;
@@ -162,15 +162,49 @@ namespace effadatnew
            // employeeTableAdapter.FillByrid(effadatDataSet.employee, Convert.ToDouble(RoomID.Text));
         }
 
+
+
+        void directPirint(int v)
+        {
+            try
+            {
+                DevExpress.XtraReports.UI.XtraReport report = new XtraReport1();//your report class
+
+                report.Parameters["parameter1"].Value = v;
+                report.CreateDocument();
+                DevExpress.XtraPrinting.PrintToolBase printTool =
+               new DevExpress.XtraPrinting.PrintToolBase(report.PrintingSystem);
+               // printTool.Print("HP LaserJet 400 M401 PCL 6");//select printer with name
+               printTool.Print();//default printer
+            }
+            catch (Exception ex)
+            {
+              //  Response.Write(ex.Message);
+                return;
+            }
+
+        }
+
         private void printEfadaBt_Click(object sender, EventArgs e)
         {
 
-           // insert_pro();
-          
-           insertorUpdate();
+           insert_pro();
 
-            showpunish form1 = new showpunish(Convert.ToInt32(metroTextBox2.Text));
-            form1.Show();
+            // insertorUpdate();
+
+            //showpunish form1 = new showpunish(Convert.ToInt32(metroTextBox2.Text));
+
+            //form1.Show();
+
+            directPirint(Convert.ToInt32(metroTextBox2.Text));
+            //viewPn view = new viewPn(Convert.ToInt32(metroTextBox2.Text));
+            //view.Show();
+            fillgrid();
+            //   roomsTableAdapter.Fill(effadatDataSet.rooms);
+            //   this.dataTable1TableAdapter.Fill(this.effadatDataSet.DataTable1);
+            //fillgrid();
+
+
         }
 
 
@@ -178,24 +212,71 @@ namespace effadatnew
         private void insert_pro()
         {
 
-      //      string conn 
-      //=     Settings.Default["effadatConnectionString"].ToString();
-      //      metroTextBox2.Text = conn;
+            int roomId = 0, empid = 0, puishtype = 0, lagnaid = 0, subjectID = 0;
+            string punishtext = "";
+            DateTime punishDate = DateTime.Today;
+            if (RomeComboBox.SelectedValue != null)
+                roomId = Convert.ToInt32(RomeComboBox.SelectedValue);
+               roomId = Convert.ToInt32(RoomID.Text);
 
-      //      SqlConnection connection = new SqlConnection(conn);
-      //      connection.Open();
-      //      SqlCommand cmd = new SqlCommand("dbo.Punish_Insert", connection);
-      //      cmd.CommandType = CommandType.StoredProcedure;
-      //      cmd.Parameters.AddWithValue("@empID ", Users.UserName_Details);
-      //      cmd.Parameters.AddWithValue("@roomID ", Users.Password_Details);
+            if (employeeCombo1.SelectedValue != null)
+                empid = Convert.ToInt32(employeeCombo1.SelectedValue);
+            if (employeeCombo1.SelectedValue != null)
+                puishtype = Convert.ToInt32(metroComboBox2.SelectedValue);
+
+            if (lagnaCombo.SelectedValue != null)
+                lagnaid = Convert.ToInt32(lagnaCombo.SelectedValue);
+
+            if (dateTimePicker1.Value != null)
+                punishDate = dateTimePicker1.Value.Date;
+
+            if (txtreport.Text != "")
+                punishtext = txtreport.Text;
+
+            if (subjectCombo.SelectedValue != null)
+                subjectID = Convert.ToInt32(subjectCombo.SelectedValue);
+
+            //int count = punishTableAdapter.InsertQuery(empid, roomId, lagnaid, puishtype, punishtext, subjectID, punishDate.ToString());
+
+            string conn
+          = Settings.Default["effadatConnectionString"].ToString();
+            metroTextBox2.Text = conn;
+
+            SqlConnection connection = new SqlConnection(conn);
+            connection.Open();
+            SqlCommand cmd = new SqlCommand("dbo.Punish_Insert", connection);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@empID ", empid);
+            cmd.Parameters.AddWithValue("@roomID ", roomId);
 
 
-      //      cmd.Parameters.Add("@ErrorPrint", SqlDbType.Char, 500);
-      //      cmd.Parameters["@ErrorPrint"].Direction = ParameterDirection.Output;
-      //      string message = cmd.Parameters["@ErrorPrint"].Value.ToString();
-      //      cmd.ExecuteScalar().ToString();
-      //      connection.Close();
-      //      return message;
+            cmd.Parameters.AddWithValue("@lagnaID  ", lagnaid);
+            cmd.Parameters.AddWithValue("@punshType  ", puishtype);
+
+
+            cmd.Parameters.AddWithValue("@punishText   ", punishtext);
+            cmd.Parameters.AddWithValue("@SubjectID   ", subjectID);
+
+            cmd.Parameters.AddWithValue("@punishDate    ", punishDate);
+
+
+            //SqlParameter rtnParam = new SqlParameter("@ID", SqlDbType.Int);
+            //cmd.Parameters.Add(rtnParam);
+
+            var returnParameter = cmd.Parameters.Add("@ID", SqlDbType.Int);
+            returnParameter.Direction = ParameterDirection.ReturnValue;
+
+            
+            cmd.ExecuteNonQuery();
+            var result = returnParameter.Value;
+
+
+       
+            connection.Close();
+
+            metroTextBox2.Text = result.ToString();
+
+
         }
 
         private void insertorUpdate()
@@ -204,8 +285,8 @@ namespace effadatnew
             string punishtext="";
             DateTime punishDate=DateTime.Today;
            if( RomeComboBox.SelectedValue !=null)
-                //roomId = Convert.ToInt32(RomeComboBox.SelectedValue);
-                roomId = Convert.ToInt32(RoomID.Text);
+                roomId = Convert.ToInt32(RomeComboBox.SelectedValue);
+              //  roomId = Convert.ToInt32(RoomID.Text);
 
             if (employeeCombo1.SelectedValue != null)
                 empid = Convert.ToInt32(employeeCombo1.SelectedValue);
@@ -256,6 +337,8 @@ namespace effadatnew
 
             int id = Convert.ToInt32(cmd.ExecuteScalar());
 
+
+
             string message = id.ToString();
 
             
@@ -263,6 +346,8 @@ namespace effadatnew
             connection.Close();
 
             metroTextBox2.Text = message;
+
+       
             // return message;
 
 
@@ -296,6 +381,19 @@ namespace effadatnew
             devgrid.DataSource = bs;
         }
 
+
+        private void fillgrid()
+        {
+
+
+            dataTable1TableAdapter.FillBy2(effadatDataSet.DataTable1);
+
+       
+
+
+            devgrid.Refresh();
+        }
+
         private void devgrid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -316,13 +414,27 @@ namespace effadatnew
 
                           //  RomeComboBox.SelectedIndex = RomeComboBox.Items.IndexOf(list1[0].roomID.ToString());
 
-                           txtCivil.Text = list1[0].roomID.ToString();
+                       //    txtCivil.Text = list1[0].roomID.ToString();
 
                             roomsTableAdapter.FillBy(effadatDataSet.rooms,list1[0].roomID);
                             //RomeComboBox.DataSource = 
 
                             RomeComboBox.DisplayMember = "roomName";
                             RomeComboBox.ValueMember = "ID";
+
+                            RoomID.Text = RomeComboBox.SelectedValue.ToString();
+
+                            employeeTableAdapter.FillBy(effadatDataSet.employee, list1[0].empID);
+                            employeeCombo1.DataSource = employeeBindingSource;
+                            employeeCombo1.DisplayMember = "employeeName";
+                            employeeCombo1.ValueMember = "ID";
+
+                            txtreport.Text = list1[0].punishText;
+
+                            dateTimePicker1.Value = list1[0].punishDate;
+                          //  txtPosition.Text=list1[0].po
+
+                           // txtCivil.Text = list1[0].
 
 
                         }
@@ -353,8 +465,34 @@ namespace effadatnew
                     }
 
                     // حذف قرار
-                    else if (e.ColumnIndex == 8)
-                    { }
+                    else if (e.ColumnIndex == 9)
+                    {
+
+                        int test = 0;
+
+                        txtreport.Text = devgrid.Rows[e.RowIndex].Cells[0].Value.ToString();
+
+                         DialogResult res = MetroMessageBox.Show(this, "هل أنت متأكد من حذف هذا القرار \n مع العلم  سيتم حذفه نهائياَ؟", "معلومات", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, 150);
+
+                        if (res == DialogResult.Yes)
+                        {
+                            test= punishTableAdapter.DeleteQuery(Convert.ToInt32(devgrid.Rows[e.RowIndex].Cells[0].Value)) ;
+
+                            if (test > 0)
+                            {
+
+                            
+                                MetroMessageBox.Show(this, "تم حذف البيانات بنجاح", "معلومات ", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, 100);
+                                fillgrid();
+                            }
+
+
+                        }
+            //    {
+
+                            //  DialogResult res = M.Show(this, "هل أنت متأكد من حذف هذا القرار \n مع العلم  سيتم حذفه نهائياَ؟", "معلومات", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, 150);
+
+                    }
                 }
             }
             //    int test = 0;

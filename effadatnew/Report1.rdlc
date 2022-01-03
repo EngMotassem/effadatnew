@@ -1222,7 +1222,7 @@
           <Value>AT5Luc8l</Value>
           <Sizing>FitProportional</Sizing>
           <Top>0.16583cm</Top>
-          <Left>16.32869cm</Left>
+          <Left>16.3287cm</Left>
           <Height>1.95792cm</Height>
           <Width>2.16931cm</Width>
           <Style>
@@ -1528,20 +1528,12 @@
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="punishText">
-          <DataField>punishText</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="PunishName">
-          <DataField>PunishName</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
+        <Field Name="ID">
+          <DataField>ID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
         <Field Name="employeeName">
           <DataField>employeeName</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="employeePosition">
-          <DataField>employeePosition</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="roomName">
@@ -1556,26 +1548,34 @@
           <DataField>punishDate</DataField>
           <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
+        <Field Name="punishText">
+          <DataField>punishText</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="PunishName">
+          <DataField>PunishName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
         <Field Name="lagna_no">
           <DataField>lagna_no</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="ID">
-          <DataField>ID</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
         <Field Name="cid">
           <DataField>cid</DataField>
           <rd:TypeName>System.Double</rd:TypeName>
         </Field>
+        <Field Name="employeePosition">
+          <DataField>employeePosition</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>effadatDataSet</rd:DataSetName>
         <rd:SchemaPath>C:\Users\Hp\Desktop\desktop apps\effadatnew\effadatnew\effadatDataSet.xsd</rd:SchemaPath>
-        <rd:TableName>PunishProc</rd:TableName>
+        <rd:TableName>DataTable1</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>PunishProcTableAdapter</rd:TableAdapterName>
+        <rd:TableAdapterName>DataTable1TableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>

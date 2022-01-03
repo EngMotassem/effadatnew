@@ -3656,6 +3656,14 @@ namespace effadatnew {
             
             private global::System.Data.DataColumn columnlagna_no;
             
+            private global::System.Data.DataColumn columncid;
+            
+            private global::System.Data.DataColumn columnemployeePosition;
+            
+            private global::System.Data.DataColumn columnroom_id;
+            
+            private global::System.Data.DataColumn columnempID;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public DataTable1DataTable() {
@@ -3755,6 +3763,38 @@ namespace effadatnew {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn cidColumn {
+                get {
+                    return this.columncid;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn employeePositionColumn {
+                get {
+                    return this.columnemployeePosition;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn room_idColumn {
+                get {
+                    return this.columnroom_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn empIDColumn {
+                get {
+                    return this.columnempID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -3790,7 +3830,7 @@ namespace effadatnew {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public DataTable1Row AddDataTable1Row(string employeeName, string roomName, string subjectName, System.DateTime punishDate, string punishText, string PunishName, int lagna_no) {
+            public DataTable1Row AddDataTable1Row(string employeeName, string roomName, string subjectName, System.DateTime punishDate, string punishText, string PunishName, int lagna_no, double cid, string employeePosition, double room_id, int empID) {
                 DataTable1Row rowDataTable1Row = ((DataTable1Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -3800,7 +3840,11 @@ namespace effadatnew {
                         punishDate,
                         punishText,
                         PunishName,
-                        lagna_no};
+                        lagna_no,
+                        cid,
+                        employeePosition,
+                        room_id,
+                        empID};
                 rowDataTable1Row.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDataTable1Row);
                 return rowDataTable1Row;
@@ -3838,6 +3882,10 @@ namespace effadatnew {
                 this.columnpunishText = base.Columns["punishText"];
                 this.columnPunishName = base.Columns["PunishName"];
                 this.columnlagna_no = base.Columns["lagna_no"];
+                this.columncid = base.Columns["cid"];
+                this.columnemployeePosition = base.Columns["employeePosition"];
+                this.columnroom_id = base.Columns["room_id"];
+                this.columnempID = base.Columns["empID"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3859,6 +3907,14 @@ namespace effadatnew {
                 base.Columns.Add(this.columnPunishName);
                 this.columnlagna_no = new global::System.Data.DataColumn("lagna_no", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnlagna_no);
+                this.columncid = new global::System.Data.DataColumn("cid", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncid);
+                this.columnemployeePosition = new global::System.Data.DataColumn("employeePosition", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnemployeePosition);
+                this.columnroom_id = new global::System.Data.DataColumn("room_id", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnroom_id);
+                this.columnempID = new global::System.Data.DataColumn("empID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnempID);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
                 this.columnID.AutoIncrement = true;
@@ -3872,6 +3928,7 @@ namespace effadatnew {
                 this.columnsubjectName.MaxLength = 200;
                 this.columnpunishText.MaxLength = 2147483647;
                 this.columnPunishName.MaxLength = 50;
+                this.columnemployeePosition.MaxLength = 150;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5715,6 +5772,70 @@ namespace effadatnew {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public double cid {
+                get {
+                    try {
+                        return ((double)(this[this.tableDataTable1.cidColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'cid\' in table \'DataTable1\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDataTable1.cidColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string employeePosition {
+                get {
+                    try {
+                        return ((string)(this[this.tableDataTable1.employeePositionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'employeePosition\' in table \'DataTable1\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDataTable1.employeePositionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public double room_id {
+                get {
+                    try {
+                        return ((double)(this[this.tableDataTable1.room_idColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'room_id\' in table \'DataTable1\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDataTable1.room_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int empID {
+                get {
+                    try {
+                        return ((int)(this[this.tableDataTable1.empIDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'empID\' in table \'DataTable1\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDataTable1.empIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsemployeeNameNull() {
                 return this.IsNull(this.tableDataTable1.employeeNameColumn);
             }
@@ -5795,6 +5916,54 @@ namespace effadatnew {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void Setlagna_noNull() {
                 this[this.tableDataTable1.lagna_noColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IscidNull() {
+                return this.IsNull(this.tableDataTable1.cidColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetcidNull() {
+                this[this.tableDataTable1.cidColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsemployeePositionNull() {
+                return this.IsNull(this.tableDataTable1.employeePositionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetemployeePositionNull() {
+                this[this.tableDataTable1.employeePositionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isroom_idNull() {
+                return this.IsNull(this.tableDataTable1.room_idColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setroom_idNull() {
+                this[this.tableDataTable1.room_idColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsempIDNull() {
+                return this.IsNull(this.tableDataTable1.empIDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetempIDNull() {
+                this[this.tableDataTable1.empIDColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -9288,21 +9457,9 @@ SELECT ID, employeeName, cid, fileno, employeePosition, room_id, roomName FROM e
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [Punish] WHERE (([ID] = @Original_ID) AND ((@IsNull_empID = 1 AND [empID] IS NULL) OR ([empID] = @Original_empID)) AND ((@IsNull_roomID = 1 AND [roomID] IS NULL) OR ([roomID] = @Original_roomID)) AND ((@IsNull_lagnaID = 1 AND [lagnaID] IS NULL) OR ([lagnaID] = @Original_lagnaID)) AND ((@IsNull_punshType = 1 AND [punshType] IS NULL) OR ([punshType] = @Original_punshType)) AND ((@IsNull_SubjectID = 1 AND [SubjectID] IS NULL) OR ([SubjectID] = @Original_SubjectID)) AND ((@IsNull_punishDate = 1 AND [punishDate] IS NULL) OR ([punishDate] = @Original_punishDate)))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM Punish\r\nWHERE  (ID = @ID)";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_empID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "empID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_empID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "empID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_roomID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "roomID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_roomID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "roomID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_lagnaID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "lagnaID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_lagnaID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "lagnaID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_punshType", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "punshType", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_punshType", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "punshType", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_SubjectID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SubjectID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SubjectID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SubjectID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_punishDate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "punishDate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_punishDate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "punishDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = @"INSERT INTO [Punish] ([empID], [roomID], [lagnaID], [punshType], [punishText], [SubjectID], [punishDate]) VALUES (@empID, @roomID, @lagnaID, @punshType, @punishText, @SubjectID, @punishDate);
@@ -9353,29 +9510,35 @@ SELECT ID, empID, roomID, lagnaID, punshType, punishText, SubjectID, punishDate 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Punish.*\r\nFROM     Punish";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT ID, empID, roomID, lagnaID, punshType, punishText, SubjectID, punishDate\r\n" +
-                "FROM     Punish\r\nWHERE  (ID = @id)";
-            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].CommandText = "dbo.DeleteQuery";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = @"INSERT INTO [Punish] ([empID], [roomID], [lagnaID], [punshType], [punishText], [SubjectID], [punishDate]) VALUES (@empID, @roomID, @lagnaID, @punshType, @punishText, @SubjectID, @punishDate);
-SELECT ID, empID, roomID, lagnaID, punshType, punishText, SubjectID, punishDate FROM Punish WHERE (ID = SCOPE_IDENTITY())";
+            this._commandCollection[2].CommandText = "SELECT ID, empID, roomID, lagnaID, punshType, punishText, SubjectID, punishDate\r\n" +
+                "FROM     Punish\r\nWHERE  (ID = @id)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@empID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "empID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@roomID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "roomID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@lagnaID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "lagnaID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@punshType", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "punshType", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@punishText", global::System.Data.SqlDbType.NVarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "punishText", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SubjectID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "SubjectID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@punishDate", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "punishDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = @"INSERT INTO [Punish] ([empID], [roomID], [lagnaID], [punshType], [punishText], [SubjectID], [punishDate]) VALUES (@empID, @roomID, @lagnaID, @punshType, @punishText, @SubjectID, @punishDate);
+SELECT ID, empID, roomID, lagnaID, punshType, punishText, SubjectID, punishDate FROM Punish WHERE (ID = SCOPE_IDENTITY())";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@empID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "empID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@roomID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "roomID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@lagnaID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "lagnaID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@punshType", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "punshType", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@punishText", global::System.Data.SqlDbType.NVarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "punishText", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SubjectID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "SubjectID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@punishDate", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "punishDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9407,7 +9570,7 @@ SELECT ID, empID, roomID, lagnaID, punshType, punishText, SubjectID, punishDate 
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int FillBy(effadatDataSet.PunishDataTable dataTable, int id) {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand = this.CommandCollection[2];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(id));
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -9421,7 +9584,7 @@ SELECT ID, empID, roomID, lagnaID, punshType, punishText, SubjectID, punishDate 
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual effadatDataSet.PunishDataTable GetDataBy1(int id) {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand = this.CommandCollection[2];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(id));
             effadatDataSet.PunishDataTable dataTable = new effadatDataSet.PunishDataTable();
             this.Adapter.Fill(dataTable);
@@ -9461,56 +9624,8 @@ SELECT ID, empID, roomID, lagnaID, punshType, punishText, SubjectID, punishDate 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_ID, global::System.Nullable<int> Original_empID, global::System.Nullable<int> Original_roomID, global::System.Nullable<int> Original_lagnaID, global::System.Nullable<int> Original_punshType, global::System.Nullable<int> Original_SubjectID, global::System.Nullable<global::System.DateTime> Original_punishDate) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ID));
-            if ((Original_empID.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_empID.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            if ((Original_roomID.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_roomID.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            if ((Original_lagnaID.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((int)(Original_lagnaID.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            if ((Original_punshType.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((int)(Original_punshType.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            if ((Original_SubjectID.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((int)(Original_SubjectID.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
-            }
-            if ((Original_punishDate.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[12].Value = ((System.DateTime)(Original_punishDate.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[12].Value = global::System.DBNull.Value;
-            }
+        public virtual int Delete(int ID) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(ID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -9714,9 +9829,38 @@ SELECT ID, empID, roomID, lagnaID, punshType, punishText, SubjectID, punishDate 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, false)]
+        public virtual int DeleteQuery(global::System.Nullable<int> ID) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
+            if ((ID.HasValue == true)) {
+                command.Parameters[1].Value = ((int)(ID.Value));
+            }
+            else {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
         public virtual int InsertQuery(global::System.Nullable<int> empID, global::System.Nullable<int> roomID, global::System.Nullable<int> lagnaID, global::System.Nullable<int> punshType, string punishText, global::System.Nullable<int> SubjectID, string punishDate) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
             if ((empID.HasValue == true)) {
                 command.Parameters[0].Value = ((int)(empID.Value));
             }
@@ -10083,6 +10227,10 @@ SELECT ID, empID, roomID, lagnaID, punshType, punishText, SubjectID, punishDate 
             tableMapping.ColumnMappings.Add("punishText", "punishText");
             tableMapping.ColumnMappings.Add("PunishName", "PunishName");
             tableMapping.ColumnMappings.Add("lagna_no", "lagna_no");
+            tableMapping.ColumnMappings.Add("cid", "cid");
+            tableMapping.ColumnMappings.Add("employeePosition", "employeePosition");
+            tableMapping.ColumnMappings.Add("room_id", "room_id");
+            tableMapping.ColumnMappings.Add("empID", "empID");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -10096,10 +10244,11 @@ SELECT ID, empID, roomID, lagnaID, punshType, punishText, SubjectID, punishDate 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT Punish.ID, employee.employeeName, rooms.roomName, Subjects.subjectName, Punish.punishDate, Punish.punishText, PunishTypes.PunishName, roomlagna.lagna_no
+            this._commandCollection[0].CommandText = @"SELECT Punish.ID, employee.employeeName, rooms.roomName, Subjects.subjectName, Punish.punishDate, Punish.punishText, PunishTypes.PunishName, roomlagna.lagna_no, employee.cid, employee.employeePosition, employee.room_id, 
+                  Punish.empID
 FROM     employee INNER JOIN
                   Punish ON employee.ID = Punish.empID INNER JOIN
                   rooms ON Punish.roomID = rooms.ID INNER JOIN
@@ -10119,6 +10268,28 @@ FROM     employee INNER JOIN
 WHERE  (employee.employeeName LIKE '%' + @emp + '%')";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@emp", global::System.Data.SqlDbType.NVarChar, 200, global::System.Data.ParameterDirection.Input, 0, 0, "employeeName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = @"SELECT Punish.ID, employee.employeeName, rooms.roomName, Subjects.subjectName, Punish.punishDate, Punish.punishText, PunishTypes.PunishName, roomlagna.lagna_no, employee.cid, employee.employeePosition, employee.room_id
+FROM     employee INNER JOIN
+                  Punish ON employee.ID = Punish.empID INNER JOIN
+                  rooms ON Punish.roomID = rooms.ID INNER JOIN
+                  Subjects ON Punish.SubjectID = Subjects.ID INNER JOIN
+                  PunishTypes ON Punish.punshType = PunishTypes.ID INNER JOIN
+                  roomlagna ON Punish.lagnaID = roomlagna.ID
+WHERE  (Punish.ID = @ID)";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = @"SELECT Punish.ID, employee.employeeName, rooms.roomName, Subjects.subjectName, Punish.punishDate, Punish.punishText, PunishTypes.PunishName, roomlagna.lagna_no, employee.cid, employee.employeePosition
+FROM     employee INNER JOIN
+                  Punish ON employee.ID = Punish.empID INNER JOIN
+                  rooms ON Punish.roomID = rooms.ID INNER JOIN
+                  Subjects ON Punish.SubjectID = Subjects.ID INNER JOIN
+                  PunishTypes ON Punish.punshType = PunishTypes.ID INNER JOIN
+                  roomlagna ON Punish.lagnaID = roomlagna.ID";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10176,6 +10347,56 @@ WHERE  (employee.employeeName LIKE '%' + @emp + '%')";
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((string)(emp));
             }
+            effadatDataSet.DataTable1DataTable dataTable = new effadatDataSet.DataTable1DataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy1(effadatDataSet.DataTable1DataTable dataTable, int ID) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(ID));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual effadatDataSet.DataTable1DataTable GetDataBy1(int ID) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(ID));
+            effadatDataSet.DataTable1DataTable dataTable = new effadatDataSet.DataTable1DataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy2(effadatDataSet.DataTable1DataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual effadatDataSet.DataTable1DataTable GetDataBy2() {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
             effadatDataSet.DataTable1DataTable dataTable = new effadatDataSet.DataTable1DataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
