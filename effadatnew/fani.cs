@@ -27,6 +27,8 @@ namespace effadatnew
 
         private void fani_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'effadatDataSet.roomlagna' table. You can move, or remove it, as needed.
+            this.roomlagnaTableAdapter.Fill(this.effadatDataSet.roomlagna);
             // TODO: This line of code loads data into the 'effadatDataSet.DataTable1' table. You can move, or remove it, as needed.
             this.dataTable1TableAdapter.Fill(this.effadatDataSet.DataTable1);
             // TODO: This line of code loads data into the 'effadatDataSet.ALlreports' table. You can move, or remove it, as needed.
@@ -90,6 +92,11 @@ namespace effadatnew
                     //cmbcourse.DataSource = list;
                     subjectCombo.DataSource = effadatDataSet.Subjects;
 
+                    roomlagnaTableAdapter.FillByri(effadatDataSet.roomlagna, Convert.ToInt32(RoomID.Text));
+                    lagnaCombo.DisplayMember = "lagna_no";
+                    lagnaCombo.ValueMember = "ID";
+                    lagnaCombo.DataSource = effadatDataSet.roomlagna;
+
                 }
 
 
@@ -102,6 +109,11 @@ namespace effadatnew
                     subjectCombo.DisplayMember = "subjectName";
                     subjectCombo.ValueMember = "ID";
                     subjectCombo.DataSource = effadatDataSet.Subjects;
+
+                    roomlagnaTableAdapter.Fill(effadatDataSet.roomlagna);
+                    lagnaCombo.DisplayMember = "lagna_no";
+                    lagnaCombo.ValueMember = "ID";
+                    lagnaCombo.DataSource = effadatDataSet.roomlagna;
                 }
 
 
@@ -112,6 +124,11 @@ namespace effadatnew
 
                     subjectCombo.DisplayMember = "subjectName";
                     subjectCombo.ValueMember = "ID";
+
+                    roomlagnaTableAdapter.FillByri(effadatDataSet.roomlagna, 0);
+                    lagnaCombo.DisplayMember = "lagna_no";
+                    lagnaCombo.ValueMember = "ID";
+                    lagnaCombo.DataSource = effadatDataSet.roomlagna;
                 }
                
                
@@ -476,7 +493,7 @@ namespace effadatnew
 
                         if (res == DialogResult.Yes)
                         {
-                            test= punishTableAdapter.DeleteQuery(Convert.ToInt32(devgrid.Rows[e.RowIndex].Cells[0].Value)) ;
+                            test= punishTableAdapter.Delete(Convert.ToInt32(devgrid.Rows[e.RowIndex].Cells[0].Value)) ;
 
                             if (test > 0)
                             {

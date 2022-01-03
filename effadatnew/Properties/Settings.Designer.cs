@@ -26,8 +26,8 @@ namespace effadatnew.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-8QU4E44\\sqlexpress;Initial Catalog=effadat;Integrated Securit" +
-            "y=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=sql.cont2018.art;Initial Catalog=effadat;Persist Security Info=True;U" +
+            "ser ID=sa;Password=Aa_123456")]
         public string effadatConnectionString {
             get {
                 return ((string)(this["effadatConnectionString"]));

@@ -100,11 +100,13 @@
   <ItemGroup>
     <Compile Include="effadatDataSet.cs">
       <DependentUpon>effadatDataSet.xsd</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="effadatDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>effadatDataSet.xsd</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="effadatDataSet11.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -202,14 +204,17 @@
     <None Include="app.config" />
     <None Include="effadatDataSet.xsc">
       <DependentUpon>effadatDataSet.xsd</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="effadatDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>effadatDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="effadatDataSet.xss">
       <DependentUpon>effadatDataSet.xsd</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="effadatDataSet11.xsc">
       <DependentUpon>effadatDataSet11.xsd</DependentUpon>
