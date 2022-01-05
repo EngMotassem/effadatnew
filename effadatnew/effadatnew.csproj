@@ -118,6 +118,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>effadatDataSet2.xsd</DependentUpon>
     </Compile>
+    <Compile Include="employee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="employee.Designer.cs">
+      <DependentUpon>employee.cs</DependentUpon>
+    </Compile>
     <Compile Include="fani.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -151,6 +157,12 @@
     <Compile Include="subjects.Designer.cs">
       <DependentUpon>subjects.cs</DependentUpon>
     </Compile>
+    <Compile Include="userProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="userProfile.Designer.cs">
+      <DependentUpon>userProfile.cs</DependentUpon>
+    </Compile>
     <Compile Include="viewPn.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,6 +178,9 @@
     <Compile Include="XtraReport1.cs">
       <SubType>Component</SubType>
     </Compile>
+    <EmbeddedResource Include="employee.resx">
+      <DependentUpon>employee.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fani.resx">
       <DependentUpon>fani.cs</DependentUpon>
     </EmbeddedResource>
@@ -191,6 +206,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="subjects.resx">
       <DependentUpon>subjects.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="userProfile.resx">
+      <DependentUpon>userProfile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="viewPn.resx">
       <DependentUpon>viewPn.cs</DependentUpon>

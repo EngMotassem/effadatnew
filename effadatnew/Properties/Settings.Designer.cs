@@ -33,5 +33,17 @@ namespace effadatnew.Properties {
                 return ((string)(this["effadatConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int userID {
+            get {
+                return ((int)(this["userID"]));
+            }
+            set {
+                this["userID"] = value;
+            }
+        }
     }
 }

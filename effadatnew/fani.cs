@@ -42,7 +42,7 @@ namespace effadatnew
             // TODO: This line of code loads data into the 'effadatDataSet.Subjects' table. You can move, or remove it, as needed.
             //  this.subjectsTableAdapter.Fill(this.effadatDataSet.Subjects);
             // TODO: This line of code loads data into the 'effadatDataSet.rooms' table. You can move, or remove it, as needed.
-            this.roomsTableAdapter.Fill(this.effadatDataSet.rooms);
+            this.roomsTableAdapter.FillBy1(this.effadatDataSet.rooms);
          //   this.roomsTableAdapter.
             RomeComboBox.SelectedIndex = -1;
             RomeComboBox.Text = "من فضلك اختر الغرفة";

@@ -22,7 +22,7 @@ namespace effadatnew
             BonusSkins.Register();
             SkinManager.EnableFormSkins();
             UserLookAndFeel.Default.SetSkinStyle("DevExpress Style");
-            Application.Run(new fani());
+            Application.Run(new Form1());
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using effadatnew.effadatDataSetTableAdapters;
+using effadatnew.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -28,6 +29,8 @@ namespace effadatnew
                 {
                     int userType = Convert.ToInt16(effadatDataSet.login.Rows[0]["UserType"].ToString());
 
+                    Settings.Default["userID"] = effadatDataSet.login.Rows[0]["ID"];
+
 
                     if (userType == 1)
                     {
@@ -36,7 +39,7 @@ namespace effadatnew
                     }
                     else
                     {
-                        fani form1 = new fani();
+                        userProfile form1 = new userProfile();
                         form1.Show();
                     }
                 }

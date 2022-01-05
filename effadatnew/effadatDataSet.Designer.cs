@@ -936,6 +936,10 @@ namespace effadatnew {
             
             private global::System.Data.DataColumn columnID;
             
+            private global::System.Data.DataColumn columnFullName;
+            
+            private global::System.Data.DataColumn columnUserType;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public loginDataTable() {
@@ -995,6 +999,22 @@ namespace effadatnew {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn FullNameColumn {
+                get {
+                    return this.columnFullName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn UserTypeColumn {
+                get {
+                    return this.columnUserType;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1030,12 +1050,14 @@ namespace effadatnew {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public loginRow AddloginRow(string userName, string password) {
+            public loginRow AddloginRow(string userName, string password, string FullName, int UserType) {
                 loginRow rowloginRow = ((loginRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         userName,
                         password,
-                        null};
+                        null,
+                        FullName,
+                        UserType};
                 rowloginRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowloginRow);
                 return rowloginRow;
@@ -1068,6 +1090,8 @@ namespace effadatnew {
                 this.columnuserName = base.Columns["userName"];
                 this.columnpassword = base.Columns["password"];
                 this.columnID = base.Columns["ID"];
+                this.columnFullName = base.Columns["FullName"];
+                this.columnUserType = base.Columns["UserType"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1079,6 +1103,10 @@ namespace effadatnew {
                 base.Columns.Add(this.columnpassword);
                 this.columnID = new global::System.Data.DataColumn("ID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnID);
+                this.columnFullName = new global::System.Data.DataColumn("FullName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFullName);
+                this.columnUserType = new global::System.Data.DataColumn("UserType", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUserType);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
                 this.columnuserName.MaxLength = 100;
@@ -1089,6 +1117,7 @@ namespace effadatnew {
                 this.columnID.AllowDBNull = false;
                 this.columnID.ReadOnly = true;
                 this.columnID.Unique = true;
+                this.columnFullName.MaxLength = 200;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4545,6 +4574,38 @@ namespace effadatnew {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string FullName {
+                get {
+                    try {
+                        return ((string)(this[this.tablelogin.FullNameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'FullName\' in table \'login\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablelogin.FullNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int UserType {
+                get {
+                    try {
+                        return ((int)(this[this.tablelogin.UserTypeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'UserType\' in table \'login\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablelogin.UserTypeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsuserNameNull() {
                 return this.IsNull(this.tablelogin.userNameColumn);
             }
@@ -4565,6 +4626,30 @@ namespace effadatnew {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetpasswordNull() {
                 this[this.tablelogin.passwordColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsFullNameNull() {
+                return this.IsNull(this.tablelogin.FullNameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetFullNameNull() {
+                this[this.tablelogin.FullNameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsUserTypeNull() {
+                return this.IsNull(this.tablelogin.UserTypeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetUserTypeNull() {
+                this[this.tablelogin.UserTypeColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -7337,6 +7422,8 @@ SELECT ID, subjectName, examDate, examType FROM Subjects WHERE (ID = @ID)";
             tableMapping.ColumnMappings.Add("userName", "userName");
             tableMapping.ColumnMappings.Add("password", "password");
             tableMapping.ColumnMappings.Add("ID", "ID");
+            tableMapping.ColumnMappings.Add("FullName", "FullName");
+            tableMapping.ColumnMappings.Add("UserType", "UserType");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -7350,27 +7437,40 @@ SELECT ID, subjectName, examDate, examType FROM Subjects WHERE (ID = @ID)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[5];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT login.userName, login.password, login.ID\r\nFROM     login INNER JOIN\r\n     " +
-                "             Subjects ON login.ID = Subjects.ID";
+            this._commandCollection[0].CommandText = "SELECT userName, password, ID, FullName, UserType\r\nFROM     login";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT userName, password, ID, UserType\r\nFROM     login\r\nWHERE  (userName = @user" +
-                ") AND (password = @pass)";
+            this._commandCollection[1].CommandText = "SELECT FullName, ID, UserType, password, userName FROM login WHERE (userName = @u" +
+                "ser) AND (password = @pass)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@user", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "userName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pass", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "password", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "UPDATE       login\r\nSET                password = @password\r\nWHERE        (userna" +
-                "me = @Original_username) AND (password = @Original_password);   \r\n";
+            this._commandCollection[2].CommandText = "SELECT userName, password, ID, FullName, UserType\r\nFROM     login\r\nwhere ID=@id";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@password", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "password", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_username", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "userName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_password", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "password", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = "UPDATE       login\r\nSET                password = @password\r\nWHERE        (userna" +
+                "me = @Original_username) AND (password = @Original_password);   \r\n";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@password", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "password", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_username", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "userName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_password", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "password", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[4].Connection = this.Connection;
+            this._commandCollection[4].CommandText = "UPDATE login\r\nSET          userName = @us, password = @pass, FullName = @fn\r\nWHER" +
+                "E  (ID = @id)";
+            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@us", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "userName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pass", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "password", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fn", global::System.Data.SqlDbType.NVarChar, 200, global::System.Data.ParameterDirection.Input, 0, 0, "FullName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7448,9 +7548,35 @@ SELECT ID, subjectName, examDate, examType FROM Subjects WHERE (ID = @ID)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByid(effadatDataSet.loginDataTable dataTable, int id) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(id));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual effadatDataSet.loginDataTable GetDataBy3(int id) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(id));
+            effadatDataSet.loginDataTable dataTable = new effadatDataSet.loginDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
         public virtual int UpdateQuery(string password, string Original_username, string Original_password) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
             if ((password == null)) {
                 command.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -7469,6 +7595,48 @@ SELECT ID, subjectName, examDate, examType FROM Subjects WHERE (ID = @ID)";
             else {
                 command.Parameters[2].Value = ((string)(Original_password));
             }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int UpdateQuery1(string us, string pass, string fn, int id) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[4];
+            if ((us == null)) {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[0].Value = ((string)(us));
+            }
+            if ((pass == null)) {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[1].Value = ((string)(pass));
+            }
+            if ((fn == null)) {
+                command.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[2].Value = ((string)(fn));
+            }
+            command.Parameters[3].Value = ((int)(id));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -7656,7 +7824,7 @@ SELECT ID, roomName, roomType FROM rooms WHERE (ID = @ID)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[5];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT rooms.*\r\nFROM     rooms";
@@ -7668,14 +7836,19 @@ SELECT ID, roomName, roomType FROM rooms WHERE (ID = @ID)";
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT ID, roomName, roomType FROM rooms WHERE (ID = @id)";
+            this._commandCollection[2].CommandText = "SELECT ID, roomName, roomType\r\nFROM     rooms\r\nWHERE  (ID NOT IN (37, 29, 28, 18," +
+                " 31, 32, 38, 43, 44, 36, 48))";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "SELECT ID\r\nFROM     rooms\r\nWHERE  (roomName = @rn)";
+            this._commandCollection[3].CommandText = "SELECT ID, roomName, roomType FROM rooms WHERE (ID = @id)";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@rn", global::System.Data.SqlDbType.NVarChar, 150, global::System.Data.ParameterDirection.Input, 0, 0, "roomName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[4].Connection = this.Connection;
+            this._commandCollection[4].CommandText = "SELECT ID\r\nFROM     rooms\r\nWHERE  (roomName = @rn)";
+            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@rn", global::System.Data.SqlDbType.NVarChar, 150, global::System.Data.ParameterDirection.Input, 0, 0, "roomName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7732,8 +7905,32 @@ SELECT ID, roomName, roomType FROM rooms WHERE (ID = @ID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillByID(effadatDataSet.roomsDataTable dataTable, int id) {
+        public virtual int FillBy1(effadatDataSet.roomsDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual effadatDataSet.roomsDataTable GetDataBy3() {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            effadatDataSet.roomsDataTable dataTable = new effadatDataSet.roomsDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByID(effadatDataSet.roomsDataTable dataTable, int id) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(id));
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -7747,7 +7944,7 @@ SELECT ID, roomName, roomType FROM rooms WHERE (ID = @ID)";
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual effadatDataSet.roomsDataTable GetDataBy(int id) {
-            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand = this.CommandCollection[3];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(id));
             effadatDataSet.roomsDataTable dataTable = new effadatDataSet.roomsDataTable();
             this.Adapter.Fill(dataTable);
@@ -7918,7 +8115,7 @@ SELECT ID, roomName, roomType FROM rooms WHERE (ID = @ID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual object getRoomID(string rn) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[4];
             if ((rn == null)) {
                 command.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -9140,7 +9337,7 @@ SELECT ID, employeeName, cid, fileno, employeePosition, room_id, roomName FROM e
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[7];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT employee.*\r\nFROM     employee";
@@ -9154,16 +9351,33 @@ SELECT ID, employeeName, cid, fileno, employeePosition, room_id, roomName FROM e
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
             this._commandCollection[2].CommandText = "SELECT ID, employeeName, cid, fileno, employeePosition, room_id, roomName\r\nFROM  " +
-                "   employee\r\nWHERE  (room_id = @rid) AND (employeeName LIKE \'%\' + @emn + \'%\')";
+                "   employee\r\nWHERE  (room_id NOT IN (37, 29, 28, 18, 31, 32, 38, 43, 44, 36, 48)" +
+                ")";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@rid", global::System.Data.SqlDbType.Float, 8, global::System.Data.ParameterDirection.Input, 0, 0, "room_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@emn", global::System.Data.SqlDbType.NVarChar, 200, global::System.Data.ParameterDirection.Input, 0, 0, "employeeName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
             this._commandCollection[3].CommandText = "SELECT ID, employeeName, cid, fileno, employeePosition, room_id, roomName\r\nFROM  " +
-                "   employee\r\nWHERE  (room_id = @rd)";
+                "   employee\r\nWHERE  (room_id = @rid) AND (employeeName LIKE \'%\' + @emn + \'%\')";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@rd", global::System.Data.SqlDbType.Float, 8, global::System.Data.ParameterDirection.Input, 0, 0, "room_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@rid", global::System.Data.SqlDbType.Float, 8, global::System.Data.ParameterDirection.Input, 0, 0, "room_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@emn", global::System.Data.SqlDbType.NVarChar, 200, global::System.Data.ParameterDirection.Input, 0, 0, "employeeName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[4].Connection = this.Connection;
+            this._commandCollection[4].CommandText = "SELECT ID, employeeName, cid, fileno, employeePosition, room_id, roomName\r\nFROM  " +
+                "   employee\r\nWHERE  (room_id = @rd)";
+            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@rd", global::System.Data.SqlDbType.Float, 8, global::System.Data.ParameterDirection.Input, 0, 0, "room_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[5].Connection = this.Connection;
+            this._commandCollection[5].CommandText = "UPDATE employee\r\nSET          room_id = @room_id\r\nWHERE  (ID = @id)";
+            this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@room_id", global::System.Data.SqlDbType.Float, 8, global::System.Data.ParameterDirection.Input, 0, 0, "room_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[6] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[6].Connection = this.Connection;
+            this._commandCollection[6].CommandText = "UPDATE employee\r\nSET          roomName = rooms.roomName\r\nFROM     employee INNER " +
+                "JOIN\r\n                  rooms ON employee.room_id = rooms.ID; \r\n";
+            this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9220,8 +9434,32 @@ SELECT ID, employeeName, cid, fileno, employeePosition, room_id, roomName FROM e
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillBylike(effadatDataSet.employeeDataTable dataTable, global::System.Nullable<double> rid, string emn) {
+        public virtual int FillBy1(effadatDataSet.employeeDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual effadatDataSet.employeeDataTable GetDataBy5() {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            effadatDataSet.employeeDataTable dataTable = new effadatDataSet.employeeDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBylike(effadatDataSet.employeeDataTable dataTable, global::System.Nullable<double> rid, string emn) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
             if ((rid.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((double)(rid.Value));
             }
@@ -9246,7 +9484,7 @@ SELECT ID, employeeName, cid, fileno, employeePosition, room_id, roomName FROM e
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual effadatDataSet.employeeDataTable GetDataBy2(global::System.Nullable<double> rid, string emn) {
-            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand = this.CommandCollection[3];
             if ((rid.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((double)(rid.Value));
             }
@@ -9269,7 +9507,7 @@ SELECT ID, employeeName, cid, fileno, employeePosition, room_id, roomName FROM e
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int FillByrid(effadatDataSet.employeeDataTable dataTable, global::System.Nullable<double> rd) {
-            this.Adapter.SelectCommand = this.CommandCollection[3];
+            this.Adapter.SelectCommand = this.CommandCollection[4];
             if ((rd.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((double)(rd.Value));
             }
@@ -9288,7 +9526,7 @@ SELECT ID, employeeName, cid, fileno, employeePosition, room_id, roomName FROM e
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual effadatDataSet.employeeDataTable GetDataBy(global::System.Nullable<double> rd) {
-            this.Adapter.SelectCommand = this.CommandCollection[3];
+            this.Adapter.SelectCommand = this.CommandCollection[4];
             if ((rd.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((double)(rd.Value));
             }
@@ -9569,6 +9807,59 @@ SELECT ID, employeeName, cid, fileno, employeePosition, room_id, roomName FROM e
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(string employeeName, global::System.Nullable<double> cid, global::System.Nullable<double> fileno, string employeePosition, global::System.Nullable<double> room_id, string roomName, int Original_ID, string Original_employeeName, global::System.Nullable<double> Original_cid, global::System.Nullable<double> Original_fileno, string Original_employeePosition, global::System.Nullable<double> Original_room_id, string Original_roomName) {
             return this.Update(employeeName, cid, fileno, employeePosition, room_id, roomName, Original_ID, Original_employeeName, Original_cid, Original_fileno, Original_employeePosition, Original_room_id, Original_roomName, Original_ID);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int UpdateQuery(global::System.Nullable<double> room_id, int id) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[5];
+            if ((room_id.HasValue == true)) {
+                command.Parameters[0].Value = ((double)(room_id.Value));
+            }
+            else {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            command.Parameters[1].Value = ((int)(id));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int UpdateQuery1() {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[6];
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
         }
     }
     

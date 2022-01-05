@@ -10,5 +10,8 @@
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">Data Source=sql.cont2018.art;Initial Catalog=effadat;Persist Security Info=True;User ID=sa;Password=Aa_123456</Value>
     </Setting>
+    <Setting Name="userID" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
