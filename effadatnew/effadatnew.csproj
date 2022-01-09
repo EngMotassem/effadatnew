@@ -42,6 +42,7 @@
     <Reference Include="DevExpress.Pdf.v17.2.Core, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.PivotGrid.v17.2.Core, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.RichEdit.v17.2.Core, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v17.2.Export, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Utils.v17.2" />
     <Reference Include="DevExpress.Sparkline.v17.2.Core" />
     <Reference Include="DevExpress.Utils.v17.2.UI, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -178,6 +179,18 @@
     <Compile Include="XtraReport1.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="XtraReportEmp.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReportEmp.Designer.cs">
+      <DependentUpon>XtraReportEmp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReportstat.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReportstat.Designer.cs">
+      <DependentUpon>XtraReportstat.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="employee.resx">
       <DependentUpon>employee.cs</DependentUpon>
     </EmbeddedResource>
@@ -218,6 +231,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="XtraReport1.resx">
       <DependentUpon>XtraReport1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReportEmp.resx">
+      <DependentUpon>XtraReportEmp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReportstat.resx">
+      <DependentUpon>XtraReportstat.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="effadatDataSet.xsc">

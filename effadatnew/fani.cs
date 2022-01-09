@@ -193,10 +193,33 @@ namespace effadatnew
                new DevExpress.XtraPrinting.PrintToolBase(report.PrintingSystem);
                // printTool.Print("HP LaserJet 400 M401 PCL 6");//select printer with name
                printTool.Print();//default printer
+                roomsTableAdapter.Fill(effadatDataSet.rooms);
             }
             catch (Exception ex)
             {
               //  Response.Write(ex.Message);
+                return;
+            }
+
+        }
+
+        void directPirint()
+        {
+            try
+            {
+                XtraReportstat re = new XtraReportstat();
+                DevExpress.XtraReports.UI.XtraReport report = re;//your report class
+
+               // report.Parameters["parameter1"].Value = v;
+                report.CreateDocument();
+                DevExpress.XtraPrinting.PrintToolBase printTool =
+               new DevExpress.XtraPrinting.PrintToolBase(report.PrintingSystem);
+                // printTool.Print("HP LaserJet 400 M401 PCL 6");//select printer with name
+                printTool.Print();//default printer
+            }
+            catch (Exception ex)
+            {
+                //  Response.Write(ex.Message);
                 return;
             }
 
@@ -217,10 +240,35 @@ namespace effadatnew
             //viewPn view = new viewPn(Convert.ToInt32(metroTextBox2.Text));
             //view.Show();
             fillgrid();
-            //   roomsTableAdapter.Fill(effadatDataSet.rooms);
+           //   roomsTableAdapter.Fill(effadatDataSet.rooms);
             //   this.dataTable1TableAdapter.Fill(this.effadatDataSet.DataTable1);
             //fillgrid();
 
+
+        }
+
+        private void directPrintemp(int empid)
+        {
+            try
+            {
+                XtraReportEmp re = new XtraReportEmp();
+                DevExpress.XtraReports.UI.XtraReport report = re;//your report class
+
+                report.Parameters["parameter1"].Value = empid;
+                report.CreateDocument();
+               // report.ExportToPdf(@"");
+                DevExpress.XtraPrinting.PrintToolBase printTool =
+               new DevExpress.XtraPrinting.PrintToolBase(report.PrintingSystem);
+                // printTool.Print("HP LaserJet 400 M401 PCL 6");//select printer with name
+                printTool.Print();//default printer
+               // printTool.
+                roomsTableAdapter.Fill(effadatDataSet.rooms);
+            }
+            catch (Exception ex)
+            {
+                //  Response.Write(ex.Message);
+                return;
+            }
 
         }
 
@@ -292,6 +340,7 @@ namespace effadatnew
             connection.Close();
 
             metroTextBox2.Text = result.ToString();
+           // roomsTableAdapter.Fill(effadatDataSet.rooms);
 
 
         }
@@ -364,7 +413,7 @@ namespace effadatnew
 
             metroTextBox2.Text = message;
 
-       
+            roomsTableAdapter.Fill(effadatDataSet.rooms);
             // return message;
 
 
@@ -449,10 +498,12 @@ namespace effadatnew
                             txtreport.Text = list1[0].punishText;
 
                             dateTimePicker1.Value = list1[0].punishDate;
-                          //  txtPosition.Text=list1[0].po
 
-                           // txtCivil.Text = list1[0].
+                            metroTextBox1.Text = list1[0].empID.ToString();
+                            //  txtPosition.Text=list1[0].po
 
+                            // txtCivil.Text = list1[0].
+                     //       roomsTableAdapter.Fill(effadatDataSet.rooms);
 
                         }
                         // //adabdec.FillBy(dataDataSet1.decTbl, Convert.ToInt32(devgrid.Rows[e.RowIndex].Cells[0].Value));
@@ -499,7 +550,7 @@ namespace effadatnew
                             {
 
                             
-                                MetroMessageBox.Show(this, "تم حذف البيانات بنجاح", "معلومات ", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, 100);
+                              //  MetroMessageBox.Show(this, "تم حذف البيانات بنجاح", "معلومات ", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, 100);
                                 fillgrid();
                             }
 
@@ -544,6 +595,27 @@ namespace effadatnew
             {
             }
 
+        }
+
+        private void btnprintgolaph_Click(object sender, EventArgs e)
+        {
+            employee employee1 = new employee();
+            employee1.Show();
+        }
+
+        private void subjectStaticsmetroButton_Click(object sender, EventArgs e)
+        {
+            directPirint();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void metroButton3_Click(object sender, EventArgs e)
+        {
+            directPrintemp(Convert.ToInt32(metroTextBox1.Text));
         }
 
         //private void employeeCombo1_TextChanged(object sender, EventArgs e)

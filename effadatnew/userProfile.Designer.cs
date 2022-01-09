@@ -87,6 +87,7 @@
             // 
             this.txtUser.Location = new System.Drawing.Point(63, 83);
             this.txtUser.Name = "txtUser";
+            this.txtUser.ReadOnly = true;
             this.txtUser.Size = new System.Drawing.Size(250, 22);
             this.txtUser.TabIndex = 5;
             // 
@@ -94,6 +95,7 @@
             // 
             this.txtPass.Location = new System.Drawing.Point(63, 150);
             this.txtPass.Name = "txtPass";
+            this.txtPass.PasswordChar = '*';
             this.txtPass.Size = new System.Drawing.Size(250, 22);
             this.txtPass.TabIndex = 6;
             // 
@@ -124,6 +126,7 @@
             this.tableAdapterManager.Connection = null;
             this.tableAdapterManager.employeePunishTableAdapter = null;
             this.tableAdapterManager.employeeTableAdapter = null;
+            this.tableAdapterManager.empPositionTableAdapter = null;
             this.tableAdapterManager.PunishTableAdapter = null;
             this.tableAdapterManager.PunishTypesTableAdapter = null;
             this.tableAdapterManager.roomlagnaTableAdapter = null;

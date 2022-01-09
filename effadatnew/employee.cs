@@ -1,8 +1,10 @@
-﻿using MetroFramework;
+﻿using effadatnew.Properties;
+using MetroFramework;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -20,8 +22,10 @@ namespace effadatnew
 
         private void employee_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'effadatDataSet1.empPosition' table. You can move, or remove it, as needed.
+            this.empPositionTableAdapter.Fill(this.effadatDataSet1.empPosition);
             // TODO: This line of code loads data into the 'effadatDataSet.DataTable1' table. You can move, or remove it, as needed.
-         //   this.dataTable1TableAdapter.Fill(this.effadatDataSet.DataTable1);
+            //   this.dataTable1TableAdapter.Fill(this.effadatDataSet.DataTable1);
             // TODO: This line of code loads data into the 'effadatDataSet.rooms' table. You can move, or remove it, as needed.
             this.roomsTableAdapter.Fill(this.effadatDataSet.rooms);
             // TODO: This line of code loads data into the 'effadatDataSet.employee' table. You can move, or remove it, as needed.
@@ -198,6 +202,56 @@ namespace effadatnew
             string columnNameToSearch = "employeeName";
             bs.Filter = columnNameToSearch + " like '%" + txtsearch.Text + "%'";
             devgrid.DataSource = bs;
+        }
+
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+
+            if (txtofempame.Text !="" && txtcid.Text != "" )
+                Insert_pro();
+        }
+
+        private void Insert_pro()
+        {
+            string conn
+        = Settings.Default["effadatConnectionString"].ToString();
+          //  metroTextBox2.Text = conn;
+
+            SqlConnection connection = new SqlConnection(conn);
+            connection.Open();
+            SqlCommand cmd = new SqlCommand("dbo.employee_I", connection);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@employeeName", txtofempame.Text);
+            cmd.Parameters.AddWithValue("@cid ", Convert.ToDecimal(txtcid.Text));
+
+
+            cmd.Parameters.AddWithValue("@fileno", Convert.ToDecimal( txtfileno.Text));
+            cmd.Parameters.AddWithValue("@employeePosition", empPositionComboBox.Text);
+
+
+            cmd.Parameters.AddWithValue("@room_id", RomComboBox1.SelectedValue);
+            cmd.Parameters.AddWithValue("@roomName", RomComboBox1.Text);
+
+          
+
+
+            //SqlParameter rtnParam = new SqlParameter("@ID", SqlDbType.Int);
+            //cmd.Parameters.Add(rtnParam);
+
+            var returnParameter = cmd.Parameters.Add("@ID", SqlDbType.Int);
+            returnParameter.Direction = ParameterDirection.ReturnValue;
+
+
+            cmd.ExecuteNonQuery();
+            var result = returnParameter.Value;
+            IDTextBox1.Text = result.ToString();
+
+
+            connection.Close();
+            //MessageBox("")
+            fillgrid();
+            MessageBox.Show("تمت الإضافة بنجاح");
+
         }
     }
 }

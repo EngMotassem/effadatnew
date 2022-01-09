@@ -29,11 +29,19 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(employee));
             this.panel2 = new System.Windows.Forms.Panel();
             this.devgrid = new System.Windows.Forms.DataGridView();
+            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.employeeNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.filenoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.employeePositionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.roomidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.roomNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.shows = new System.Windows.Forms.DataGridViewImageColumn();
             this.employeeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.effadatDataSet = new effadatnew.effadatDataSet();
             this.txtsearch = new MetroFramework.Controls.MetroTextBox();
@@ -54,20 +62,28 @@
             this.dataTable1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataTable1TableAdapter = new effadatnew.effadatDataSetTableAdapters.DataTable1TableAdapter();
             this.tableAdapterManager = new effadatnew.effadatDataSetTableAdapters.TableAdapterManager();
-            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.employeeNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.filenoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.employeePositionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.roomidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.roomNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.shows = new System.Windows.Forms.DataGridViewImageColumn();
+            this.RomComboBox1 = new MetroFramework.Controls.MetroComboBox();
+            this.txtcid = new MetroFramework.Controls.MetroTextBox();
+            this.txtfileno = new MetroFramework.Controls.MetroTextBox();
+            this.txtofempame = new MetroFramework.Controls.MetroTextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.metroButton1 = new MetroFramework.Controls.MetroButton();
+            this.empPositionComboBox = new MetroFramework.Controls.MetroComboBox();
+            this.empPositionBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.effadatDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.effadatDataSet1 = new effadatnew.effadatDataSet();
+            this.empPositionTableAdapter = new effadatnew.effadatDataSetTableAdapters.empPositionTableAdapter();
+            this.IDTextBox1 = new MetroFramework.Controls.MetroTextBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.devgrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.effadatDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.roomsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataTable1BindingSource)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.empPositionBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.effadatDataSet1BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.effadatDataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -97,14 +113,14 @@
             this.devgrid.AutoGenerateColumns = false;
             this.devgrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.devgrid.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightSteelBlue;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.devgrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.LightSteelBlue;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.devgrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.devgrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.devgrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.iDDataGridViewTextBoxColumn,
@@ -116,14 +132,14 @@
             this.roomNameDataGridViewTextBoxColumn,
             this.shows});
             this.devgrid.DataSource = this.employeeBindingSource;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Teal;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.devgrid.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Tahoma", 9.75F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.devgrid.DefaultCellStyle = dataGridViewCellStyle4;
             this.devgrid.EnableHeadersVisualStyles = false;
             this.devgrid.GridColor = System.Drawing.SystemColors.ControlDarkDark;
             this.devgrid.Location = new System.Drawing.Point(22, 75);
@@ -136,6 +152,63 @@
             this.devgrid.TabIndex = 4;
             this.devgrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.devgrid_CellClick);
             this.devgrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.devgrid_CellContentClick);
+            // 
+            // iDDataGridViewTextBoxColumn
+            // 
+            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // employeeNameDataGridViewTextBoxColumn
+            // 
+            this.employeeNameDataGridViewTextBoxColumn.DataPropertyName = "employeeName";
+            this.employeeNameDataGridViewTextBoxColumn.HeaderText = "الاسم";
+            this.employeeNameDataGridViewTextBoxColumn.Name = "employeeNameDataGridViewTextBoxColumn";
+            // 
+            // cidDataGridViewTextBoxColumn
+            // 
+            this.cidDataGridViewTextBoxColumn.DataPropertyName = "cid";
+            this.cidDataGridViewTextBoxColumn.HeaderText = "cid";
+            this.cidDataGridViewTextBoxColumn.Name = "cidDataGridViewTextBoxColumn";
+            this.cidDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // filenoDataGridViewTextBoxColumn
+            // 
+            this.filenoDataGridViewTextBoxColumn.DataPropertyName = "fileno";
+            this.filenoDataGridViewTextBoxColumn.HeaderText = "fileno";
+            this.filenoDataGridViewTextBoxColumn.Name = "filenoDataGridViewTextBoxColumn";
+            this.filenoDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // employeePositionDataGridViewTextBoxColumn
+            // 
+            this.employeePositionDataGridViewTextBoxColumn.DataPropertyName = "employeePosition";
+            this.employeePositionDataGridViewTextBoxColumn.HeaderText = "employeePosition";
+            this.employeePositionDataGridViewTextBoxColumn.Name = "employeePositionDataGridViewTextBoxColumn";
+            this.employeePositionDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // roomidDataGridViewTextBoxColumn
+            // 
+            this.roomidDataGridViewTextBoxColumn.DataPropertyName = "room_id";
+            this.roomidDataGridViewTextBoxColumn.HeaderText = "room_id";
+            this.roomidDataGridViewTextBoxColumn.Name = "roomidDataGridViewTextBoxColumn";
+            this.roomidDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // roomNameDataGridViewTextBoxColumn
+            // 
+            this.roomNameDataGridViewTextBoxColumn.DataPropertyName = "roomName";
+            this.roomNameDataGridViewTextBoxColumn.HeaderText = "الغرفة";
+            this.roomNameDataGridViewTextBoxColumn.Name = "roomNameDataGridViewTextBoxColumn";
+            // 
+            // shows
+            // 
+            this.shows.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.shows.FillWeight = 9.723158F;
+            this.shows.HeaderText = "عرض";
+            this.shows.Image = ((System.Drawing.Image)(resources.GetObject("shows.Image")));
+            this.shows.Name = "shows";
+            this.shows.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.shows.Width = 53;
             // 
             // employeeBindingSource
             // 
@@ -362,7 +435,7 @@
             this.txtempname.CustomButton.UseSelectable = true;
             this.txtempname.CustomButton.Visible = false;
             this.txtempname.Lines = new string[0];
-            this.txtempname.Location = new System.Drawing.Point(602, 189);
+            this.txtempname.Location = new System.Drawing.Point(724, 135);
             this.txtempname.MaxLength = 32767;
             this.txtempname.Multiline = true;
             this.txtempname.Name = "txtempname";
@@ -383,7 +456,7 @@
             // 
             // metroButton2
             // 
-            this.metroButton2.Location = new System.Drawing.Point(755, 315);
+            this.metroButton2.Location = new System.Drawing.Point(859, 219);
             this.metroButton2.Name = "metroButton2";
             this.metroButton2.Size = new System.Drawing.Size(89, 29);
             this.metroButton2.Style = MetroFramework.MetroColorStyle.Black;
@@ -404,7 +477,7 @@
             this.RomeComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.RomeComboBox.FormattingEnabled = true;
             this.RomeComboBox.ItemHeight = 24;
-            this.RomeComboBox.Location = new System.Drawing.Point(611, 239);
+            this.RomeComboBox.Location = new System.Drawing.Point(733, 183);
             this.RomeComboBox.Name = "RomeComboBox";
             this.RomeComboBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RomeComboBox.Size = new System.Drawing.Size(311, 30);
@@ -437,7 +510,7 @@
             this.txtempid.CustomButton.UseSelectable = true;
             this.txtempid.CustomButton.Visible = false;
             this.txtempid.Lines = new string[0];
-            this.txtempid.Location = new System.Drawing.Point(602, 135);
+            this.txtempid.Location = new System.Drawing.Point(724, 81);
             this.txtempid.MaxLength = 32767;
             this.txtempid.Multiline = true;
             this.txtempid.Name = "txtempid";
@@ -471,7 +544,7 @@
             this.txtroomid.CustomButton.UseSelectable = true;
             this.txtroomid.CustomButton.Visible = false;
             this.txtroomid.Lines = new string[0];
-            this.txtroomid.Location = new System.Drawing.Point(611, 428);
+            this.txtroomid.Location = new System.Drawing.Point(737, 290);
             this.txtroomid.MaxLength = 32767;
             this.txtroomid.Multiline = true;
             this.txtroomid.Name = "txtroomid";
@@ -486,6 +559,7 @@
             this.txtroomid.TabIndex = 44;
             this.txtroomid.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtroomid.UseSelectable = true;
+            this.txtroomid.Visible = false;
             this.txtroomid.WaterMark = "الاسم";
             this.txtroomid.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtroomid.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -504,6 +578,7 @@
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.employeePunishTableAdapter = null;
             this.tableAdapterManager.employeeTableAdapter = this.employeeTableAdapter;
+            this.tableAdapterManager.empPositionTableAdapter = null;
             this.tableAdapterManager.PunishTableAdapter = null;
             this.tableAdapterManager.PunishTypesTableAdapter = null;
             this.tableAdapterManager.roomlagnaTableAdapter = null;
@@ -511,68 +586,226 @@
             this.tableAdapterManager.SubjectsTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = effadatnew.effadatDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // iDDataGridViewTextBoxColumn
+            // RomComboBox1
             // 
-            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
-            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.RomComboBox1.DataSource = this.roomsBindingSource;
+            this.RomComboBox1.DisplayMember = "roomName";
+            this.RomComboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RomComboBox1.FormattingEnabled = true;
+            this.RomComboBox1.ItemHeight = 24;
+            this.RomComboBox1.Location = new System.Drawing.Point(22, 217);
+            this.RomComboBox1.Name = "RomComboBox1";
+            this.RomComboBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.RomComboBox1.Size = new System.Drawing.Size(311, 30);
+            this.RomComboBox1.TabIndex = 45;
+            this.RomComboBox1.UseSelectable = true;
+            this.RomComboBox1.ValueMember = "ID";
             // 
-            // employeeNameDataGridViewTextBoxColumn
+            // txtcid
             // 
-            this.employeeNameDataGridViewTextBoxColumn.DataPropertyName = "employeeName";
-            this.employeeNameDataGridViewTextBoxColumn.HeaderText = "الاسم";
-            this.employeeNameDataGridViewTextBoxColumn.Name = "employeeNameDataGridViewTextBoxColumn";
             // 
-            // cidDataGridViewTextBoxColumn
             // 
-            this.cidDataGridViewTextBoxColumn.DataPropertyName = "cid";
-            this.cidDataGridViewTextBoxColumn.HeaderText = "cid";
-            this.cidDataGridViewTextBoxColumn.Name = "cidDataGridViewTextBoxColumn";
-            this.cidDataGridViewTextBoxColumn.Visible = false;
             // 
-            // filenoDataGridViewTextBoxColumn
+            this.txtcid.CustomButton.Image = null;
+            this.txtcid.CustomButton.Location = new System.Drawing.Point(296, 1);
+            this.txtcid.CustomButton.Name = "";
+            this.txtcid.CustomButton.Size = new System.Drawing.Size(23, 23);
+            this.txtcid.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtcid.CustomButton.TabIndex = 1;
+            this.txtcid.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtcid.CustomButton.UseSelectable = true;
+            this.txtcid.CustomButton.Visible = false;
+            this.txtcid.Lines = new string[0];
+            this.txtcid.Location = new System.Drawing.Point(22, 75);
+            this.txtcid.MaxLength = 32767;
+            this.txtcid.Multiline = true;
+            this.txtcid.Name = "txtcid";
+            this.txtcid.PasswordChar = '\0';
+            this.txtcid.PromptText = "الرقم المدني";
+            this.txtcid.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtcid.SelectedText = "";
+            this.txtcid.SelectionLength = 0;
+            this.txtcid.SelectionStart = 0;
+            this.txtcid.ShortcutsEnabled = true;
+            this.txtcid.Size = new System.Drawing.Size(320, 25);
+            this.txtcid.TabIndex = 46;
+            this.txtcid.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtcid.UseSelectable = true;
+            this.txtcid.WaterMark = "الرقم المدني";
+            this.txtcid.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtcid.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            this.filenoDataGridViewTextBoxColumn.DataPropertyName = "fileno";
-            this.filenoDataGridViewTextBoxColumn.HeaderText = "fileno";
-            this.filenoDataGridViewTextBoxColumn.Name = "filenoDataGridViewTextBoxColumn";
-            this.filenoDataGridViewTextBoxColumn.Visible = false;
+            // txtfileno
             // 
-            // employeePositionDataGridViewTextBoxColumn
             // 
-            this.employeePositionDataGridViewTextBoxColumn.DataPropertyName = "employeePosition";
-            this.employeePositionDataGridViewTextBoxColumn.HeaderText = "employeePosition";
-            this.employeePositionDataGridViewTextBoxColumn.Name = "employeePositionDataGridViewTextBoxColumn";
-            this.employeePositionDataGridViewTextBoxColumn.Visible = false;
             // 
-            // roomidDataGridViewTextBoxColumn
             // 
-            this.roomidDataGridViewTextBoxColumn.DataPropertyName = "room_id";
-            this.roomidDataGridViewTextBoxColumn.HeaderText = "room_id";
-            this.roomidDataGridViewTextBoxColumn.Name = "roomidDataGridViewTextBoxColumn";
-            this.roomidDataGridViewTextBoxColumn.Visible = false;
+            this.txtfileno.CustomButton.Image = null;
+            this.txtfileno.CustomButton.Location = new System.Drawing.Point(296, 1);
+            this.txtfileno.CustomButton.Name = "";
+            this.txtfileno.CustomButton.Size = new System.Drawing.Size(23, 23);
+            this.txtfileno.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtfileno.CustomButton.TabIndex = 1;
+            this.txtfileno.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtfileno.CustomButton.UseSelectable = true;
+            this.txtfileno.CustomButton.Visible = false;
+            this.txtfileno.Lines = new string[0];
+            this.txtfileno.Location = new System.Drawing.Point(22, 128);
+            this.txtfileno.MaxLength = 32767;
+            this.txtfileno.Multiline = true;
+            this.txtfileno.Name = "txtfileno";
+            this.txtfileno.PasswordChar = '\0';
+            this.txtfileno.PromptText = "رقم الملف";
+            this.txtfileno.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtfileno.SelectedText = "";
+            this.txtfileno.SelectionLength = 0;
+            this.txtfileno.SelectionStart = 0;
+            this.txtfileno.ShortcutsEnabled = true;
+            this.txtfileno.Size = new System.Drawing.Size(320, 25);
+            this.txtfileno.TabIndex = 47;
+            this.txtfileno.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtfileno.UseSelectable = true;
+            this.txtfileno.WaterMark = "رقم الملف";
+            this.txtfileno.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtfileno.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // roomNameDataGridViewTextBoxColumn
+            // txtofempame
             // 
-            this.roomNameDataGridViewTextBoxColumn.DataPropertyName = "roomName";
-            this.roomNameDataGridViewTextBoxColumn.HeaderText = "الغرفة";
-            this.roomNameDataGridViewTextBoxColumn.Name = "roomNameDataGridViewTextBoxColumn";
             // 
-            // shows
             // 
-            this.shows.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.shows.FillWeight = 9.723158F;
-            this.shows.HeaderText = "عرض";
-            this.shows.Image = ((System.Drawing.Image)(resources.GetObject("shows.Image")));
-            this.shows.Name = "shows";
-            this.shows.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.shows.Width = 53;
+            // 
+            this.txtofempame.CustomButton.Image = null;
+            this.txtofempame.CustomButton.Location = new System.Drawing.Point(296, 1);
+            this.txtofempame.CustomButton.Name = "";
+            this.txtofempame.CustomButton.Size = new System.Drawing.Size(23, 23);
+            this.txtofempame.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtofempame.CustomButton.TabIndex = 1;
+            this.txtofempame.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtofempame.CustomButton.UseSelectable = true;
+            this.txtofempame.CustomButton.Visible = false;
+            this.txtofempame.Lines = new string[0];
+            this.txtofempame.Location = new System.Drawing.Point(22, 14);
+            this.txtofempame.MaxLength = 32767;
+            this.txtofempame.Multiline = true;
+            this.txtofempame.Name = "txtofempame";
+            this.txtofempame.PasswordChar = '\0';
+            this.txtofempame.PromptText = "اسم العضو";
+            this.txtofempame.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtofempame.SelectedText = "";
+            this.txtofempame.SelectionLength = 0;
+            this.txtofempame.SelectionStart = 0;
+            this.txtofempame.ShortcutsEnabled = true;
+            this.txtofempame.Size = new System.Drawing.Size(320, 25);
+            this.txtofempame.TabIndex = 48;
+            this.txtofempame.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtofempame.UseSelectable = true;
+            this.txtofempame.WaterMark = "اسم العضو";
+            this.txtofempame.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtofempame.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.metroButton1);
+            this.panel1.Controls.Add(this.empPositionComboBox);
+            this.panel1.Controls.Add(this.txtofempame);
+            this.panel1.Controls.Add(this.RomComboBox1);
+            this.panel1.Controls.Add(this.txtfileno);
+            this.panel1.Controls.Add(this.txtcid);
+            this.panel1.Location = new System.Drawing.Point(689, 342);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(368, 297);
+            this.panel1.TabIndex = 49;
+            // 
+            // metroButton1
+            // 
+            this.metroButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.metroButton1.Location = new System.Drawing.Point(123, 265);
+            this.metroButton1.Name = "metroButton1";
+            this.metroButton1.Size = new System.Drawing.Size(89, 29);
+            this.metroButton1.Style = MetroFramework.MetroColorStyle.Black;
+            this.metroButton1.TabIndex = 50;
+            this.metroButton1.Text = "إضافة";
+            this.metroButton1.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.metroButton1.UseCustomBackColor = true;
+            this.metroButton1.UseCustomForeColor = true;
+            this.metroButton1.UseSelectable = true;
+            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
+            // 
+            // empPositionComboBox
+            // 
+            this.empPositionComboBox.DataSource = this.empPositionBindingSource;
+            this.empPositionComboBox.DisplayMember = "positonName";
+            this.empPositionComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.empPositionComboBox.FormattingEnabled = true;
+            this.empPositionComboBox.ItemHeight = 24;
+            this.empPositionComboBox.Location = new System.Drawing.Point(22, 169);
+            this.empPositionComboBox.Name = "empPositionComboBox";
+            this.empPositionComboBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.empPositionComboBox.Size = new System.Drawing.Size(311, 30);
+            this.empPositionComboBox.TabIndex = 49;
+            this.empPositionComboBox.UseSelectable = true;
+            this.empPositionComboBox.ValueMember = "ID";
+            // 
+            // empPositionBindingSource
+            // 
+            this.empPositionBindingSource.DataMember = "empPosition";
+            this.empPositionBindingSource.DataSource = this.effadatDataSet1BindingSource;
+            // 
+            // effadatDataSet1BindingSource
+            // 
+            this.effadatDataSet1BindingSource.DataSource = this.effadatDataSet1;
+            this.effadatDataSet1BindingSource.Position = 0;
+            // 
+            // effadatDataSet1
+            // 
+            this.effadatDataSet1.DataSetName = "effadatDataSet";
+            this.effadatDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // empPositionTableAdapter
+            // 
+            this.empPositionTableAdapter.ClearBeforeFill = true;
+            // 
+            // IDTextBox1
+            // 
+            // 
+            // 
+            // 
+            this.IDTextBox1.CustomButton.Image = null;
+            this.IDTextBox1.CustomButton.Location = new System.Drawing.Point(296, 1);
+            this.IDTextBox1.CustomButton.Name = "";
+            this.IDTextBox1.CustomButton.Size = new System.Drawing.Size(23, 23);
+            this.IDTextBox1.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.IDTextBox1.CustomButton.TabIndex = 1;
+            this.IDTextBox1.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.IDTextBox1.CustomButton.UseSelectable = true;
+            this.IDTextBox1.CustomButton.Visible = false;
+            this.IDTextBox1.Lines = new string[0];
+            this.IDTextBox1.Location = new System.Drawing.Point(733, 655);
+            this.IDTextBox1.MaxLength = 32767;
+            this.IDTextBox1.Multiline = true;
+            this.IDTextBox1.Name = "IDTextBox1";
+            this.IDTextBox1.PasswordChar = '\0';
+            this.IDTextBox1.PromptText = "الاسم";
+            this.IDTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.IDTextBox1.SelectedText = "";
+            this.IDTextBox1.SelectionLength = 0;
+            this.IDTextBox1.SelectionStart = 0;
+            this.IDTextBox1.ShortcutsEnabled = true;
+            this.IDTextBox1.Size = new System.Drawing.Size(320, 25);
+            this.IDTextBox1.TabIndex = 50;
+            this.IDTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.IDTextBox1.UseSelectable = true;
+            this.IDTextBox1.WaterMark = "الاسم";
+            this.IDTextBox1.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.IDTextBox1.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // employee
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(954, 717);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.ClientSize = new System.Drawing.Size(1229, 701);
+            this.Controls.Add(this.IDTextBox1);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.txtroomid);
             this.Controls.Add(this.txtempid);
             this.Controls.Add(this.metroButton2);
@@ -590,6 +823,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.effadatDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.roomsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataTable1BindingSource)).EndInit();
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.empPositionBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.effadatDataSet1BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.effadatDataSet1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -626,5 +863,17 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn roomidDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn roomNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewImageColumn shows;
+        private MetroFramework.Controls.MetroComboBox RomComboBox1;
+        private MetroFramework.Controls.MetroTextBox txtcid;
+        private MetroFramework.Controls.MetroTextBox txtfileno;
+        private MetroFramework.Controls.MetroTextBox txtofempame;
+        private System.Windows.Forms.Panel panel1;
+        private MetroFramework.Controls.MetroComboBox empPositionComboBox;
+        private effadatDataSet effadatDataSet1;
+        private System.Windows.Forms.BindingSource effadatDataSet1BindingSource;
+        private System.Windows.Forms.BindingSource empPositionBindingSource;
+        private effadatDataSetTableAdapters.empPositionTableAdapter empPositionTableAdapter;
+        private MetroFramework.Controls.MetroButton metroButton1;
+        private MetroFramework.Controls.MetroTextBox IDTextBox1;
     }
 }
