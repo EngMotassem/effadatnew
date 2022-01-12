@@ -500,10 +500,12 @@ namespace effadatnew
                             dateTimePicker1.Value = list1[0].punishDate;
 
                             metroTextBox1.Text = list1[0].empID.ToString();
+                            metroTextBox3.Text = list1[0].ID.ToString();
+                            metroComboBox2.SelectedValue = list1[0].punshType;
                             //  txtPosition.Text=list1[0].po
 
                             // txtCivil.Text = list1[0].
-                     //       roomsTableAdapter.Fill(effadatDataSet.rooms);
+                            //       roomsTableAdapter.Fill(effadatDataSet.rooms);
 
                         }
                         // //adabdec.FillBy(dataDataSet1.decTbl, Convert.ToInt32(devgrid.Rows[e.RowIndex].Cells[0].Value));
