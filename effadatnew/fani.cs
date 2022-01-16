@@ -153,6 +153,7 @@ namespace effadatnew
                   if (metroTextBox1.Text !="System.Data.DataRowView")
 
                  fillemplo(Convert.ToInt32(metroTextBox1.Text));
+                //txtEffadatCount.Text = punishTableAdapter.COUNTOFEFFADAT(Convert.ToInt32(metroTextBox1.Text)).ToString();
 
 
             }
@@ -173,6 +174,8 @@ namespace effadatnew
             {
                 txtCivil.Text = effadatDataSet.employee.Rows[0]["cid"].ToString();
                 txtPosition.Text = effadatDataSet.employee.Rows[0]["employeePosition"].ToString();
+                int empid =Convert.ToInt32( effadatDataSet.employee.Rows[0]["ID"]);
+                txtEffadatCount.Text = punishTableAdapter.COUNTOFEFFADAT(empid).ToString();
             }
 
 
@@ -502,6 +505,8 @@ namespace effadatnew
                             metroTextBox1.Text = list1[0].empID.ToString();
                             metroTextBox3.Text = list1[0].ID.ToString();
                             metroComboBox2.SelectedValue = list1[0].punshType;
+
+                            txtEffadatCount.Text=punishTableAdapter.COUNTOFEFFADAT(list1[0].empID).ToString();
                             //  txtPosition.Text=list1[0].po
 
                             // txtCivil.Text = list1[0].

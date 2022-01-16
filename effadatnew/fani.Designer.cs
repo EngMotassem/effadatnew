@@ -102,6 +102,8 @@
             this.employeeCombo1 = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.metroTextBox3 = new MetroFramework.Controls.MetroTextBox();
+            this.txtEffadatCount = new MetroFramework.Controls.MetroTextBox();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.effadatDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.punishTypesBindingSource)).BeginInit();
@@ -554,7 +556,7 @@
             this.metroTextBox2.CustomButton.Visible = false;
             this.metroTextBox2.Enabled = false;
             this.metroTextBox2.Lines = new string[0];
-            this.metroTextBox2.Location = new System.Drawing.Point(57, 532);
+            this.metroTextBox2.Location = new System.Drawing.Point(311, 608);
             this.metroTextBox2.MaxLength = 32767;
             this.metroTextBox2.Multiline = true;
             this.metroTextBox2.Name = "metroTextBox2";
@@ -569,6 +571,7 @@
             this.metroTextBox2.TabIndex = 42;
             this.metroTextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.metroTextBox2.UseSelectable = true;
+            this.metroTextBox2.Visible = false;
             this.metroTextBox2.WaterMark = "الوظيفة";
             this.metroTextBox2.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.metroTextBox2.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -589,7 +592,7 @@
             this.RoomID.CustomButton.Visible = false;
             this.RoomID.Enabled = false;
             this.RoomID.Lines = new string[0];
-            this.RoomID.Location = new System.Drawing.Point(57, 575);
+            this.RoomID.Location = new System.Drawing.Point(311, 651);
             this.RoomID.MaxLength = 32767;
             this.RoomID.Multiline = true;
             this.RoomID.Name = "RoomID";
@@ -604,6 +607,7 @@
             this.RoomID.TabIndex = 40;
             this.RoomID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.RoomID.UseSelectable = true;
+            this.RoomID.Visible = false;
             this.RoomID.WaterMark = "الوظيفة";
             this.RoomID.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.RoomID.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -624,7 +628,7 @@
             this.metroTextBox1.CustomButton.Visible = false;
             this.metroTextBox1.Enabled = false;
             this.metroTextBox1.Lines = new string[0];
-            this.metroTextBox1.Location = new System.Drawing.Point(57, 626);
+            this.metroTextBox1.Location = new System.Drawing.Point(311, 702);
             this.metroTextBox1.MaxLength = 32767;
             this.metroTextBox1.Multiline = true;
             this.metroTextBox1.Name = "metroTextBox1";
@@ -639,6 +643,7 @@
             this.metroTextBox1.TabIndex = 41;
             this.metroTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.metroTextBox1.UseSelectable = true;
+            this.metroTextBox1.Visible = false;
             this.metroTextBox1.WaterMark = "الوظيفة";
             this.metroTextBox1.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.metroTextBox1.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -1047,6 +1052,8 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FloralWhite;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.txtEffadatCount);
             this.panel1.Controls.Add(this.metroTextBox3);
             this.panel1.Controls.Add(this.metroTextBox1);
             this.panel1.Controls.Add(this.metroTextBox2);
@@ -1096,7 +1103,7 @@
             this.metroTextBox3.CustomButton.Visible = false;
             this.metroTextBox3.Enabled = false;
             this.metroTextBox3.Lines = new string[0];
-            this.metroTextBox3.Location = new System.Drawing.Point(57, 657);
+            this.metroTextBox3.Location = new System.Drawing.Point(311, 733);
             this.metroTextBox3.MaxLength = 32767;
             this.metroTextBox3.Multiline = true;
             this.metroTextBox3.Name = "metroTextBox3";
@@ -1111,9 +1118,58 @@
             this.metroTextBox3.TabIndex = 43;
             this.metroTextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.metroTextBox3.UseSelectable = true;
+            this.metroTextBox3.Visible = false;
             this.metroTextBox3.WaterMark = "الوظيفة";
             this.metroTextBox3.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.metroTextBox3.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // txtEffadatCount
+            // 
+            // 
+            // 
+            // 
+            this.txtEffadatCount.CustomButton.Image = null;
+            this.txtEffadatCount.CustomButton.Location = new System.Drawing.Point(363, 1);
+            this.txtEffadatCount.CustomButton.Name = "";
+            this.txtEffadatCount.CustomButton.Size = new System.Drawing.Size(23, 23);
+            this.txtEffadatCount.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtEffadatCount.CustomButton.TabIndex = 1;
+            this.txtEffadatCount.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtEffadatCount.CustomButton.UseSelectable = true;
+            this.txtEffadatCount.CustomButton.Visible = false;
+            this.txtEffadatCount.FontWeight = MetroFramework.MetroTextBoxWeight.Bold;
+            this.txtEffadatCount.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.txtEffadatCount.Lines = new string[0];
+            this.txtEffadatCount.Location = new System.Drawing.Point(103, 533);
+            this.txtEffadatCount.MaxLength = 32767;
+            this.txtEffadatCount.Multiline = true;
+            this.txtEffadatCount.Name = "txtEffadatCount";
+            this.txtEffadatCount.PasswordChar = '\0';
+            this.txtEffadatCount.PromptText = "عدد الافادات";
+            this.txtEffadatCount.ReadOnly = true;
+            this.txtEffadatCount.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtEffadatCount.SelectedText = "";
+            this.txtEffadatCount.SelectionLength = 0;
+            this.txtEffadatCount.SelectionStart = 0;
+            this.txtEffadatCount.ShortcutsEnabled = true;
+            this.txtEffadatCount.Size = new System.Drawing.Size(387, 25);
+            this.txtEffadatCount.TabIndex = 44;
+            this.txtEffadatCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtEffadatCount.UseSelectable = true;
+            this.txtEffadatCount.WaterMark = "عدد الافادات";
+            this.txtEffadatCount.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtEffadatCount.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // label3
+            // 
+            this.label3.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(491, 529);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(183, 29);
+            this.label3.TabIndex = 45;
+            this.label3.Text = "عدد إفادات العضو";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // fani
             // 
@@ -1221,5 +1277,7 @@
         private System.Windows.Forms.ComboBox employeeCombo1;
         private System.Windows.Forms.Panel panel1;
         private MetroFramework.Controls.MetroTextBox metroTextBox3;
+        private MetroFramework.Controls.MetroTextBox txtEffadatCount;
+        private System.Windows.Forms.Label label3;
     }
 }
