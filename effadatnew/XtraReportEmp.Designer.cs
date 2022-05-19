@@ -217,7 +217,7 @@
             this.xrLabel23.SizeF = new System.Drawing.SizeF(145.8334F, 25.5F);
             this.xrLabel23.StylePriority.UseFont = false;
             this.xrLabel23.StylePriority.UseTextAlignment = false;
-            this.xrLabel23.Text = "الفترة الدراسية الأولى";
+            this.xrLabel23.Text = "الفترة الدراسية الثانية";
             this.xrLabel23.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
             // 
             // xrPictureBox1
